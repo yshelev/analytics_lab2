@@ -33,7 +33,7 @@ class LLMService:
         
         response, error = self.query_service.proccess_query(prompt["system_prompt"], prompt["user_prompt"])
         if error: 
-            return
+            response = "{}"
         
         # тут по хорошему парсить ответ, однако модель довольно хорошо отвечает, системный промпт нормальный и
         # просит модель отвечать сразу в json формате, поэтому я просто записываю ответ в json
